@@ -18,13 +18,13 @@ Meteor is it's own application which runs it's own web server and packaging syst
 Steps:
 
 1) Install if you don't already have Meteor installed
->>	curl https://install.meteor.com | sh
+- curl https://install.meteor.com | sh
 
 2) Clone from repository to any directory, this is independent anything else installed
->>	git clone https://github.com/alisalaah/meteorcms.git ~/Sites/
+- git clone https://github.com/alisalaah/meteorcms.git ~/Sites/
 
 3) Run the web application:
->>	cd ~/Sites/meteorcms
->>	meteor
+- cd ~/Sites/meteorcms
+- meteor
 
 Commit changes if you would like to contribute!
