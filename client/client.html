@@ -1,0 +1,99 @@
+<head>
+	<title>Title</title>
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" style="color: #666; font-weight: bold">Meteor CMS</a>
+					<div class="nav-collapse collapse">
+						<nav>
+							<ul class="nav">
+								{{> nav}}
+							</ul>
+							<ul class="nav" style="float:right">
+								{{loginButtons align="right"}}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="main" role="main">
+		<div class="container">
+			{{> home}}
+		</div><!-- /container -->
+	</div>
+	<footer class="navbar navbar-fixed-bottom">
+		<span id="copy">Footer from MongoDB</span>
+	</footer>
+</body>
+
+<template name="nav">
+	<li><a class="home">Home</a></li>
+	<li><a class="about">About</a></li>
+	<li><a class="contact">Contact</a></li>
+</template>
+
+<template name="home">
+	{{#if showContactDialog}}
+		{{> contactDialog}}
+	{{/if}}
+	<div class="row">
+		<div class="span9">
+			<legend>Welcome to Meteor CMS</legend>
+			<p>This is the home page. In reality this page should be rendered from MongoDB so creation and choosing of pages and paths would be dynamic</p>
+			<blockquote>
+				<p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p>
+				<small><cite>Aric Camarata</cite></small>
+			</blockquote>
+		</div>
+		<div class="span3">
+			<legend>Announcements</legend>
+			<ul class="list">
+				<li>Created a github project to start. (this is static but shouldn't be)<small>2012-10-22</small></li>				
+			</ul>
+		</div>
+	</div>
+</template>
+
+<template name="contactDialog">
+	<div class="mask"> </div>
+	<div class="modal">
+		<form name="form-contact" class="form-horizontal">
+			<div class="modal-header">
+				<button type="button" class="close done">&times;</button>
+				<h3>Contact us</h3>
+			</div>
+
+			<div class="modal-body">
+				<div class="control-group">
+					<label class="control-label" for="inputName">Name:</label>
+					<div class="controls">
+						<input type="text" id="inputName" placeholder="Your name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Email:</label>
+					<div class="controls">
+						<input type="text" id="inputEmail" placeholder="your@email.com">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputMessage">Message:</label>
+					<div class="controls">
+						<textarea class="span3" id="inputMessage" rows="6" placeholder="Please enter your message here"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="cancel" class="btn done">Cancel</button>
+				<button type="submit" class="btn btn-primary done">Submit</button>
+			</div>
+		</form>
+	</div>
+</template>
