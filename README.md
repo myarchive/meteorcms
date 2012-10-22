@@ -10,6 +10,11 @@ Though this is non-functional since the project is new I will upload a demo upon
 
 - https://cms.meteor.com/
 
+There is also a Google Group for this project
+
+- https://groups.google.com/forum/#!forum/meteorcms
+
+
 install
 =======
 
