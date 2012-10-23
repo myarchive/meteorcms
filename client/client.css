@@ -1,16 +1,18 @@
-/* CSS declarations go here */
-#main {
-	margin-top: 40px;
-	margin-bottom: 20px;
+body { 
+    padding: 40px 0 20px 0; /* padding to keep content from being overlapped by the header/nav and footer */
 }
-
+a {
+	cursor: pointer;
+}
+a:hover {
+    text-decoration: none;
+}
 footer {
 	border: 1px solid #D4D4D4;
 	background: #F2F2F2;
 	text-align: center;
 	font-size: .85em;
 }
-
 #login-buttons {
 	padding: 12px;
 }
@@ -36,10 +38,6 @@ legend > small {
 	color: #ccc;
 	float: right;
 }
-a {
-	cursor: pointer;
-}
-
 .modal > form {
 	margin: 0;
 	padding: 0;

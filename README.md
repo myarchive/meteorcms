@@ -14,11 +14,14 @@ There is also a Google Group for this project
 
 - https://groups.google.com/forum/#!forum/meteorcms
 
+There is a freenode channel ##meteorcms (and also Meteor's #meteor you can join too)
+
+- http://webchat.freenode.net/?channels=#meteor,##meteorcms
 
 install
 =======
 
-Meteor is it's own application which runs it's own web server and packaging system which is built on Node.js, Sockets.io, etc. Since it runs it's own web server you can have this code anywhere.  In Step 2 you can change ~/Sites/ to any directory, though that is probably the best place on your development machine to have it.
+Meteor is it's own application which runs it's own web server and packaging system which is built on Node.js, Sockjs, etc. Since it runs it's own web server you can have this code anywhere.  In Step 2 you can change ~/Sites/ to any directory, though that is probably the best place on your development machine to have it.
 
 Steps:
 
