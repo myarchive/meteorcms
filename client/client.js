@@ -7,6 +7,10 @@ Template.nav.events({
 	}
 });
 
+// Load page
+
+
+
 // Contact dialog
 
 var openContactDialog = function () {
