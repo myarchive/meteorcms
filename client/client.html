@@ -30,6 +30,9 @@
 	<div id="main" role="main">
 		<div id="cont" class="container">
 			{{> home}}
+                        {{#if currentUser}}
+                            {{> profile}}
+                        {{/if}}
 		</div><!-- /container -->
 	</div>
 	<footer class="navbar navbar-fixed-bottom">
@@ -41,4 +44,7 @@
 	<li><a class="home">Home</a></li>
 	<li><a class="about">About</a></li>
 	<li><a class="contact">Contact</a></li>
+        {{#if currentUser}}
+            <li><a href="/profile" class="profile">Profile</a></li>
+        {{/if}}
 </template>

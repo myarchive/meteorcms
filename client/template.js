@@ -65,9 +65,9 @@ Template.profile.admin = function () {
         return true; 
     }
 };
-Template.logging.admin = function () {
+/*Template.logging.admin = function () {
     if (Session.get('role') === 'admin') {
         return true; 
     }
-};
+};*/
 
