@@ -22,7 +22,7 @@
  */
 // To Do: Some things may be handled by 0.5 Meteor Authentication so we should review this
 
-// Create the callable methods 
+//Users = new Meteor.Collection('users');
 Meteor.methods({
 	updateProfile: function (options) {
 	var value = {};

@@ -1,8 +1,9 @@
 <template name="navmenu">
-	<li><a class="nav_nav1">Nav1</a></li>
-	<li><a class="nav_nav2">Nav2</a></li>
-	<li><a class="nav_nav3">Nav3</a></li>
-	{{#if currentUser}}
-		<li><a href="/profile" class="profile">Profile</a></li>
-	{{/if}}	
+	<h6>
+		[[dynamically build nav with #each]]
+		{{#if currentUser}}
+			<a href="/profile" class="profile"> [[Profile link displayed when login]]</a>
+		{{/if}}
+	</h6>
+	<!--<li><a class="nav_nav1">Nav1</a></li>-->
 </template>

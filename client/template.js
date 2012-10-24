@@ -3,20 +3,49 @@
 * The template actions definitions
 */
 
-Template.home.greeting = function () {
-    if (!Session.get('page')) {
-	return "Welcome to basic.";
-    } else {
-        return "";
-    }
+Template.container.content = function () {
+	if (!Session.get('page')) {
+		page = 'home'; }
+	else {
+		page = Session.get('page'); }
+	console.log(Pages.find({'page': page}));
+	return Pages.find({'page': page});
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Template.terms.terms = function () {
-    if (Session.get('page') === 'terms') {
-        return true;
-    } else {
-        return false;
-    }
+	if (Session.get('page') === 'terms') {
+		return true;
+	} else {
+		return false;
+	}
 };
 
 Template.profile.profile = function () {
@@ -33,41 +62,41 @@ Session.set('role', role);
 }
 //----
 
-    if (Session.get('page') === 'profile') {
-        return true;
-    } else {
-        return false;
-    }
+	if (Session.get('page') === 'profile') {
+		return true;
+	} else {
+		return false;
+	}
 };
 // After the basic template resource
 Template.profile.error = function () {
-    if (Session.get('appMessage')) {
-        return Session.get('appMessage');
-    }
+	if (Session.get('appMessage')) {
+		return Session.get('appMessage');
+	}
 };
 
 Template.profile.events({
-    'click .save': function (event, template) { // pass template too, so avoid to access on dom with document.getElementByiI
+	'click .save': function (event, template) { // pass template too, so avoid to access on dom with document.getElementByiI
 	var value = {};
-        var real_name = template.find(".real_name").value;
+		var real_name = template.find(".real_name").value;
 	value.real_name = real_name;
 	if (Session.get('role') === "admin") {
-	    var role = template.find(".role").value;
-	    value.role = role;
+		var role = template.find(".role").value;
+		value.role = role;
 	}
-        // call the method
-        Meteor.call('updateProfile', value); // function name and options
-    }
+		// call the method
+		Meteor.call('updateProfile', value); // function name and options
+	}
 });
 
 Template.profile.admin = function () {
-    if (Session.get('role') === 'admin') {
-        return true; 
-    }
+	if (Session.get('role') === 'admin') {
+		return true; 
+	}
 };
 /*Template.logging.admin = function () {
-    if (Session.get('role') === 'admin') {
-        return true; 
-    }
+	if (Session.get('role') === 'admin') {
+		return true; 
+	}
 };*/
 
