@@ -1,8 +1,9 @@
-/*
-* 
-* The client definitions
-*/
-
 // Session variable initialize
-Session.set('appMessage', null);
+Session.set('page', null);
 Session.set('role', null);
+
+function loadPage(page) {
+	if (page === null) { page = 'home'; }
+	content = Pages.findOne({page: 'home'});
+	return content;
+}

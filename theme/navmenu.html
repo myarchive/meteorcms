@@ -1,0 +1,8 @@
+<template name="navmenu">
+	<li><a class="nav_nav1">Nav1</a></li>
+	<li><a class="nav_nav2">Nav2</a></li>
+	<li><a class="nav_nav3">Nav3</a></li>
+	{{#if currentUser}}
+		<li><a href="/profile" class="profile">Profile</a></li>
+	{{/if}}	
+</template>
