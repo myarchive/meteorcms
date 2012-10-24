@@ -10,7 +10,7 @@ Meteor.startup(function () {
 		Config.insert({
 			application : {
 				"site": "Site name",
-				"title": "Site title",
+				"title": "Site title"
 			},
 			modules: {
 				"foo": {
@@ -47,12 +47,73 @@ Meteor.startup(function () {
 		Pages.insert({
 			page: "home", // unique name
 			title: "Home",
+			template: "home",
+			resource: "guest",
+			categories: null,
+			tags: null,
+			url: "/",
+			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page. In reality this page should be rendered from MongoDB so creation and choosing of pages and paths would be dynamic</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>"
+		});
+		Pages.insert({
+			page: "about", // unique name
+			title: "About",
 			template: "default",
 			resource: "guest",
 			categories: null,
 			tags: null,
-			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page. In reality this page should be rendered from MongoDB so creation and choosing of pages and paths would be dynamic</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>"
+			url: "/about",
+			content: "<legend>About us</legend><p>This is a placeholder for the about page.</p>"
+		});
+		Pages.insert({
+			page: "contact", // unique name
+			title: "Contact",
+			template: "default",
+			resource: "guest",
+			categories: null,
+			tags: null,
+			url: "/contact",
+			content: "<legend>Contact us</legend><p>This is a placeholder for the contact page.</p>"
 		});
 	}
+	
+	// More robust?
+	if (NavMenu.find({}).count() === 0) {
+		NavMenu.insert({
+			id: 1, // unique id
+			order: 1,
+			label: "Home",
+			page: "home",
+			url: null
+		});
+	}
+	
+	// More robust?
+	if (NavFoot.find({}).count() === 0) {
+		Pages.insert({
+			id: 1, // unique id
+			order: 1,
+			label: "About",
+			page: "about",
+			url: null
+		});
+		Pages.insert({
+			id: 2, // unique id
+			order: 2,
+			label: "Contact",
+			page: "contact",
+			url: null
+		});
+	}
+	
+	// Alternate navigation at the top right (usually) of the page usually for other sections or sites
+	/* 	if (NavAlt.find({}).count() === 0) {
+	 * 	Pages.insert({
+	 * 		id: 1, // unique id
+	 * 		order: 1,
+	 * 		label: "Home",
+	 * 		page: "home"
+	 * 	});
+	 * }
+	 */
 	
 });
