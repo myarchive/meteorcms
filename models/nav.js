@@ -1,6 +1,4 @@
-/* ACL Model
- * 
- * Users collection has a roles tag which can be an array of all roleid's they have
+/* Nav Model
  * 
  * Roles Collection
  * id: id
@@ -20,6 +18,6 @@
 // To Do: discuss placing which parts in the server side
 // Note: Since all content comes down from server we still have the ability to compare user perms to resource there
 
-Roles = new Meteor.Collection('roles');
-Resources = new Meteor.Collection('resources');
-Permissions = new Meteor.Collection('permissions');
+NavMenu = new Meteor.Collection('navmenu');
+NavFoot = new Meteor.Collection('navfoot');
+NavAlt = new Meteor.Collection('navalt');

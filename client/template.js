@@ -1,7 +1,9 @@
-/*
-* 
-* The template actions definitions
-*/
+/* Templating system
+ * Layouts can define multiple body templates if wanted
+ * Containers can define multiple page templates if wanted
+ * The page templates will then output the main content
+ * Any layouts or pages can display other content such as a widget, etc.
+ */
 
 Template.container.content = function () {
 	if (!Session.get('page')) {
@@ -12,7 +14,7 @@ Template.container.content = function () {
 	return Pages.find({'page': page});
 };
 
-
+// Ignore below this until integrated back in
 
 
 

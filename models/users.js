@@ -22,6 +22,7 @@
  */
 // To Do: Some things may be handled by 0.5 Meteor Authentication so we should review this
 
+// Relies on Meteor built in user system so will break if you try to make a collection for it
 //Users = new Meteor.Collection('users');
 Meteor.methods({
 	updateProfile: function (options) {
