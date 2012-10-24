@@ -1,6 +1,26 @@
 /* Users Model
- * This will store all things related to querying users and updating user information
+ * 
+ * Users Collection
+ * id: id
+ * username: username
+ * email: email
+ * password: password
+ * salt: salt to use with hashing of password
+ * first: name
+ * last: name
+ * phone: phone
+ * country: country
+ * firstlogin: true on creation of account, falsed after they confirm or complete profile
+ * newpass: true to require password changed on next login, such as when admin manually creates them
+ * cookieid: 40+ randomized hash for "remember me" that would match cookie on user (cookie can be matched to autologin)
+ * created: timestamp of user creation
+ * lastlogin: timestamp of last login
+ * lastloginip: last ip that logged in
+ * active: true or false
+ * acttoken: null, or if needs activation the token put in on activation page to activate (email confirmations?)
+ * rectoken: null, or token needed to recover password
  */
+// To Do: Some things may be handled by 0.5 Meteor Authentication so we should review this
 
 // Create the callable methods 
 Meteor.methods({

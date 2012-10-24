@@ -1,3 +1,12 @@
 /* Pages Model
- * This is for creating and editing pages etc
+ * 
+ * Pages Collection
+ * id: id
+ * title: title
+ * content: html for the page with handlebar support
+ * resource: for acl
+ * categories: ...
+ * tags: ...
  */
+
+Pages = new Meteor.Collection('pages');
