@@ -1,8 +1,26 @@
+/* Configuration File
+ * Themes, Modules, etc. will rebuild as needed when changed here
+ * Some things can/should be changed via DB not here, discussion still needed.
+ */
 {
 	"application" : {
+		"site": "Site name",
+		"title": "Site title",
+		"salt": "yourSiteSaltWouldBeHereForPasswordHashing!"
 	},
 	"modules": {
+		"foo": {
+			"option": 0
+		}
 	},
 	"themes": {
+		"default": {
+			"active": true
+		},
+		"foo": {
+			"active": false,
+			"primaryColor": "#111",
+			"secondaryColor": "#222"
+		}
 	}
 }
