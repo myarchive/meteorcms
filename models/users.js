@@ -39,7 +39,7 @@ Meteor.methods({
 		} 
 		} else {
 			Meteor.users.update({_id: this.userId}, {$set: {profile: options}});
-			Session.set('appMessage', "Fatto");
+			Session.set('appMessage', "Done");
 		}
 		
 	}

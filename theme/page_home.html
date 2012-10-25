@@ -2,6 +2,10 @@
 	<div class="row">
 		<div class="span9">
 			<h6>[[replace with mongo content]]</h6>
+                    {{#each items}}
+                        <legend>{{title}}</legend>
+                        {{{content}}}
+                    {{/each}}
 		</div>
 		<div class="span3">
 			<legend>Announcements</legend>

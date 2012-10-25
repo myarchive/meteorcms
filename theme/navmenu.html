@@ -1,6 +1,9 @@
 <template name="navmenu">
 	<h6>
 		[[dynamically build nav with #each]]
+                {{#each items}}
+                    {{label}}
+                {{/each}}
 		{{#if currentUser}}
 			<a href="/profile" class="profile"> [[Profile link displayed when login]]</a>
 		{{/if}}

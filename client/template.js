@@ -14,6 +14,15 @@ Template.container.content = function () {
 	return Pages.find({'page': page});
 };
 
+// Rendering navmenu items
+Template.navmenu.items = function () {
+    return NavMenu.find();
+};
+
+// rendering Home page items
+Template.page_home.items = function () {
+    return Pages.find({page: Session.get('page')});
+};
 // Ignore below this until integrated back in
 
 
