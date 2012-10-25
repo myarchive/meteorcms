@@ -36,3 +36,12 @@ Steps:
 - meteor
 
 Commit changes if you would like to contribute!
+
+tests
+=======
+
+Install requirements:     
+`npm install -g mocha`    
+`npm install request`
+
+Into tests/ run: mocha --reporter spec
