@@ -43,7 +43,7 @@ Meteor.startup(function () {
 	}
 	
 	// More robust?
-	if (Pages.find({}).count() === 0) {
+	if (Pages.find({}).count() < 2) {
 		Pages.insert({
 			page: "home", // unique name
 			title: "Home",
@@ -77,7 +77,7 @@ Meteor.startup(function () {
 	}
 	
 	// More robust?
-	if (NavMenu.find({}).count() === 0) {
+	if (NavMenu.find({}).count() < 2) {
 		NavMenu.insert({
 			id: 1, // unique id
 			order: 1,
@@ -85,18 +85,25 @@ Meteor.startup(function () {
 			page: "home",
 			url: null
 		});
+		NavMenu.insert({
+			id: 2, // unique id
+			order: 2,
+			label: "Google",
+			page: null,
+			url: "www.google.com"
+		});
 	}
 	
 	// More robust?
 	if (NavFoot.find({}).count() === 0) {
-		Pages.insert({
+		NavFoot.insert({
 			id: 1, // unique id
 			order: 1,
 			label: "About",
 			page: "about",
 			url: null
 		});
-		Pages.insert({
+		NavFoot.insert({
 			id: 2, // unique id
 			order: 2,
 			label: "Contact",
