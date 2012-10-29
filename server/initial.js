@@ -80,14 +80,14 @@ Meteor.startup(function () {
 	if (NavMenu.find({}).count() < 2) {
 		NavMenu.insert({
 			id: 1, // unique id
-			order: 1,
+			order: 2,
 			label: "Home",
 			page: "home",
 			url: null
 		});
 		NavMenu.insert({
 			id: 2, // unique id
-			order: 2,
+			order: 1,
 			label: "Google",
 			page: null,
 			url: "www.google.com"

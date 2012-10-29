@@ -1,6 +1,10 @@
 <template name="navmenu">
 		{{#each items}}
+			{{#if page}}
 			<li><a class="nav_{{page}}">{{label}}</a></li>
+			{{else}}
+			<li><a href="{{url}}">{{label}}</a></li>
+			{{/if}}
 		{{/each}}
 		{{#if currentUser}}
 			<li><a href="/profile" class="profile">Profile</a></li>

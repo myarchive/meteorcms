@@ -5,6 +5,12 @@
  * Any layouts or pages can display other content such as a widget, etc.
  */
 
+Template.body.template = function () {
+	// Make this dynamic with page information
+	var file = "body_default";
+    return file;
+}
+
 Template.page.content = function () {
 	if (!Session.get('page')) {
 		page = 'home'; }
@@ -17,7 +23,6 @@ Template.page.content = function () {
 
 // Rendering navmenu items
 Template.navmenu.items = function () {
-	console.log(NavMenu.findOne({}));
-    return NavMenu.find({});
+    return NavMenu.find({}, {sort:{order:1}});
 };
 
