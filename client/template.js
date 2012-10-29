@@ -21,8 +21,12 @@ Template.page.content = function () {
 	return (result !== undefined) ? result.content : "";
 };
 
-// Rendering navmenu items
 Template.navmenu.items = function () {
     return NavMenu.find({}, {sort:{order:1}});
+};
+
+Template.navfoot.items = function () {
+    console.log("--> "+NavFoot.findOne({}));
+    return NavFoot.find({}, {sort:{order:1}});
 };
 

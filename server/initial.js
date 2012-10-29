@@ -95,7 +95,7 @@ Meteor.startup(function () {
 	}
 	
 	// More robust?
-	if (NavFoot.find({}).count() === 0) {
+	if (NavFoot.find({}).count() < 2) {
 		NavFoot.insert({
 			id: 1, // unique id
 			order: 1,
