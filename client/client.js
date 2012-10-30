@@ -10,3 +10,6 @@ function loadModal(a){var b=$(".in").val();$("#modal").load(a);if(b==undefined){
 Session.set('info', null);
 Session.set('page', null);
 Session.set('role', null);
+
+// To Do:
+console.log("### TODO: Body & Page templating needs to be dynamic");
