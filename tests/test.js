@@ -13,28 +13,28 @@ var request = require('request');
 var verbose = true;
 
 describe("MeteorCMS", function () {
-       // Test basic route
-        describe("GET /", function () {
-                it('responds with default route', function (done) {
-                        var options = {
-                                uri: 'http://localhost:3000/'
+		// Test basic route
+		describe("GET /", function () {
+				it('responds with default route', function (done) {
+						var options = {
+								uri: 'http://localhost:3000/'
 
-                        };
-                        request(options, function(error, response, body) {
-                                // Alert if error
-                                assert.equal(error, null);
+						};
+						request(options, function(error, response, body) {
+								// Alert if error
+								assert.equal(error, null);
 
-                                // Test if value is truthy.
-                                assert(body);
-                                // Log the results
-                                if (verbose) {
-                                        console.log(body);
-                                }
+								// Test if value is truthy.
+								assert(body);
+								// Log the results
+								if (verbose) {
+										console.log(body);
+								}
 
-                                // Finish asynchronous test
-                                done();
-                        });
+								// Finish asynchronous test
+								done();
+						});
 
-                });
-        });
+				});
+		});
 });

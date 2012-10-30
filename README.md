@@ -1,7 +1,7 @@
 meteorcms v 0.1
 =========
 
-A CMS system built and based on the Meteor project.  www.meteor.com
+A CMS system built and based on the Meteor project (www.meteor.com).
 
 demo
 ====
@@ -21,7 +21,7 @@ There is a freenode channel ##meteorcms (and also Meteor's #meteor you can join 
 install
 =======
 
-Meteor is it's own application which runs it's own web server and packaging system which is built on Node.js, Sockjs, etc. Since it runs it's own web server you can have this code anywhere.  In Step 2 you can change ~/Sites/ to any directory, though that is probably the best place on your development machine to have it.
+Meteor is it's own application which runs it's own web server and packaging system which is built on Node.js, Sockjs, etc. Since it runs it's own web server you can have this code anywhere. In Step 2 you can change ~/Sites/ to any directory, though that is probably the best place on your development machine to have it.
 
 Steps:
 
@@ -40,8 +40,8 @@ Commit changes if you would like to contribute!
 tests
 =======
 
-Install requirements:     
-`npm install -g mocha`    
+Install requirements:
+`npm install -g mocha`
 `npm install request`
 
 Into tests/ run: mocha --reporter spec

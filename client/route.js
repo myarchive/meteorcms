@@ -11,12 +11,10 @@ var Router = Backbone.Router.extend({
 		":page" : "page" // Other pages function
 	},
 	page: function(page) {
-   /*	 if (!page) {
-			TL.info("Request route: index", "Backbone Routing");
-		} else {
-			TL.info("Request route: " + page, "Backbone Routing");
-		}*/
+		if (!page) { page = 'home'; }
 		Session.set('page', page);
+		// if (!page) { TL.info("Request route: index", "Backbone Routing"); }
+		// else { TL.info("Request route: " + page, "Backbone Routing"); }
 	}
 });
 
