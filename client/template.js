@@ -31,7 +31,6 @@ Template.navmenu.items = function () {
 };
 
 Template.navfoot.items = function () {
-	console.log("--> "+NavFoot.findOne({}));
 	return NavFoot.find({}, {sort:{order:1}});
 };
 
