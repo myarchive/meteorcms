@@ -13,3 +13,7 @@
  */
 
 Posts = new Meteor.Collection('posts');
+
+if (Meteor.isClient) {
+	Meteor.subscribe("posts");
+}

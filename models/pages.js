@@ -10,3 +10,7 @@
  */
 
 Pages = new Meteor.Collection('pages');
+
+if (Meteor.isClient) {
+	Meteor.subscribe("pages");
+}

@@ -23,3 +23,9 @@
 Roles = new Meteor.Collection('roles');
 Resources = new Meteor.Collection('resources');
 Permissions = new Meteor.Collection('permissions');
+
+if (Meteor.isClient) {
+//	Meteor.subscribe("roles");
+//	Meteor.subscribe("resources");
+//	Meteor.subscribe("permissions");
+}

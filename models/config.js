@@ -7,3 +7,8 @@
  */
 
 Config = new Meteor.Collection('config');
+
+if (Meteor.isClient) {
+	Meteor.subscribe("config");
+}
+
