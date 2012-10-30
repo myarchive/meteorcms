@@ -20,10 +20,10 @@
  * acttoken: null, or if needs activation the token put in on activation page to activate (email confirmations?)
  * rectoken: null, or token needed to recover password
  */
-// To Do: Some things may be handled by 0.5 Meteor Authentication so we should review this
 
+// To Do: Some things may be handled by 0.5 Meteor Authentication so we should review this
 // Relies on Meteor built in user system so will break if you try to make a collection for it
-//Users = new Meteor.Collection('users');
+// Users = new Meteor.Collection('users');
 Meteor.methods({
 	updateProfile: function (options) {
 	var value = {};

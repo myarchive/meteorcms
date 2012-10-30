@@ -29,21 +29,8 @@ Meteor.startup(function () {
 			}
 		});
 	}
-
-	// Form for user to create this? may be removed?
-	if (Meteor.users.find({}).count() === 0) {
-		Meteor.users.insert({
-			username: "admin@email.com", // unique name
-			emails: [
-				// each email address can only belong to one user.
-				{ address: "admin@email.com", verified: true }
-			],
-			profile: {role: "admin"}
-		});
-	}
 	
-	// More robust?
-	if (Pages.find({}).count() < 2) {
+	if (Pages.find({}).count() < 3) {
 		Pages.insert({
 			page: "home", // unique name
 			title: "Home",
@@ -76,7 +63,16 @@ Meteor.startup(function () {
 		});
 	}
 	
-	// More robust?
+	if (NavAlt.find({}).count() < 1) {
+		NavAlt.insert({
+			id: 1, // unique id
+			order: 1,
+			label: "Meteor CMS",
+			page: null,
+			url: "http://cms.meteor.com"
+		});
+	}
+	
 	if (NavMenu.find({}).count() < 2) {
 		NavMenu.insert({
 			id: 1, // unique id
@@ -94,7 +90,6 @@ Meteor.startup(function () {
 		});
 	}
 	
-	// More robust?
 	if (NavFoot.find({}).count() < 2) {
 		NavFoot.insert({
 			id: 1, // unique id
@@ -111,16 +106,19 @@ Meteor.startup(function () {
 			url: null
 		});
 	}
-	
-	// Alternate navigation at the top right (usually) of the page usually for other sections or sites
-	/* 	if (NavAlt.find({}).count() === 0) {
-	 * 	Pages.insert({
-	 * 		id: 1, // unique id
-	 * 		order: 1,
-	 * 		label: "Home",
-	 * 		page: "home"
-	 * 	});
-	 * }
-	 */
-	
+
+	// MUST REVIEW THIS TO TRIGGER A FIRST TIME SETUP PAGE WHICH THE USER CHOOSES AN ADMIN USER+PASS
+	// AFTER CREATING A USER+PASS and choosing SITE NAME, TITLE, BRAND/LOGO, ETC ETC ETC user will be taken to
+	// admin section to create or edit pages, menus, content, etc...
+	if (Meteor.users.find({}).count() === 0) {
+		Meteor.users.insert({
+			username: "admin@email.com", // unique name
+			emails: [
+				// each email address can only belong to one user.
+				{ address: "admin@email.com", verified: true }
+			],
+			profile: {role: "admin"}
+		});
+	}
+
 });

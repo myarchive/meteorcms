@@ -29,3 +29,8 @@ if (Meteor.isClient) {
 //	Meteor.subscribe("resources");
 //	Meteor.subscribe("permissions");
 }
+if (Meteor.isServer) {
+//	Meteor.publish("roles", function () { return Roles.find({}, {fields: {foo: 1, bar: 1}}); });
+//	Meteor.publish("resources", function () { return Resources.find({}, {fields: {foo: 1, bar: 1}}); });
+//	Meteor.publish("permissions", function () { return Permissions.find({}, {fields: {foo: 1, bar: 1}}); });
+}
