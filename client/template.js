@@ -12,12 +12,16 @@ Template.body.template = function () {
 }
 
 Template.page.content = function () {
-	if (!Session.get('page')) {
-		page = 'home'; }
-	else {
-		page = Session.get('page'); }
+	if (!Session.get('page')) { page = 'home'; }
+	else { page = Session.get('page'); }
 	
 	result = Pages.findOne({'page': page});
+	// Set URL here with routing rules with page data vs. routing rules
+	/* var Router is set in route.js if possible make this dynamic so that it uses the routing rules
+	 * from route.js, you also have the page data from the mongoDB to utilize but must set URL correctly here
+	 */
+	
+	// Return the content of the page
 	return (result !== undefined) ? result.content : "";
 };
 
@@ -30,3 +34,21 @@ Template.navfoot.items = function () {
     return NavFoot.find({}, {sort:{order:1}});
 };
 
+// Click Events
+Template.header.events = {
+	'click .brand': function() {
+		Session.set('page', 'home');
+	}
+}
+
+Template.navmenu.events = {
+	'click .navitem': function(item) {
+		Session.set('page', $(item.target).attr('alt'));
+	}
+}
+
+Template.navmenu.events = {
+	'click .navitem': function(item) {
+		Session.set('page', $(item.target).attr('alt'));
+	}
+}
