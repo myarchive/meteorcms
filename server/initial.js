@@ -114,7 +114,7 @@ Meteor.startup(function () {
 	// MUST REVIEW THIS TO TRIGGER A FIRST TIME SETUP PAGE WHICH THE USER CHOOSES AN ADMIN USER+PASS
 	// AFTER CREATING A USER+PASS and choosing SITE NAME, TITLE, BRAND/LOGO, ETC ETC ETC user will be taken to
 	// admin section to create or edit pages, menus, content, etc...
-	if (Meteor.users.find({}).count() === 0) {
+	/*if (Meteor.users.find({}).count() === 0) {
 		Meteor.users.insert({
 			username: "admin@email.com", // unique name
 			emails: [
@@ -123,6 +123,6 @@ Meteor.startup(function () {
 			],
 			profile: {role: "admin"}
 		});
-	}
+	}*/
 
 });
