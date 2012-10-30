@@ -1,0 +1,9 @@
+<template name="navalt">
+		{{#each items}}
+			{{#if page}}
+			<span style="margin-left:15px"><a class="navitem" alt="{{page}}">{{label}}</a></span>
+			{{else}}
+			<span style="margin-left:15px"><a href="{{url}}">{{label}}</a></span>
+			{{/if}}
+		{{/each}}
+</template>

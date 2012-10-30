@@ -15,6 +15,18 @@ Template.body.template = function () {
 	return Template[bt]();
 }
 
+Template.header.siteName = function () {
+	result = Config.findOne({});
+	text = result ? result.settings.site : "Meteor CMS";
+	return text;
+}
+
+Template.body.siteTitle = function () {
+	result = Config.findOne({});
+	text = result ? result.settings.title : "Meteor CMS";
+	return text;
+}
+
 Template.container.template = function () {
 	if (!Session.get('page')) { page = 'home'; }
 	else { page = Session.get('page'); }
@@ -25,7 +37,22 @@ Template.container.template = function () {
 	return Template[pt]();
 }
 
-Template.page.content = function () {
+Template.content.siteTitle = function () {
+	if (!Session.get('page')) { page = 'home'; }
+	else { page = Session.get('page'); }
+	
+	result = Config.findOne({});
+	title = result ? result.settings.title : "Meteor CMS";
+	slogan = result ? result.settings.slogan : null;
+	
+	result = Pages.findOne({'page': page});
+	text = (result !== undefined) ? result.title : null;
+	
+	if (text) { return title+" | "+text; }
+	return slogan ? title+" - "+slogan : title;
+}
+
+Template.content.html = function () {
 	if (!Session.get('page')) { page = 'home'; }
 	else { page = Session.get('page'); }
 	
@@ -38,6 +65,10 @@ Template.page.content = function () {
 	
 	// Return the content of the page
 	return (result !== undefined) ? result.content : "";
+};
+
+Template.navalt.items = function () {
+	return NavAlt.find({}, {sort:{order:1}});
 };
 
 Template.navmenu.items = function () {
@@ -55,6 +86,12 @@ Template.header.events = {
 	}
 }
 
+Template.navalt.events = {
+	'click .navitem': function(item) {
+		Session.set('page', $(item.target).attr('alt'));
+	}
+}
+
 Template.navmenu.events = {
 	'click .navitem': function(item) {
 		Session.set('page', $(item.target).attr('alt'));
@@ -67,7 +104,7 @@ Template.navfoot.events = {
 	}
 }
 
-Template.page.events = {
+Template.content.events = {
 	'click .navitem': function(item) {
 		Session.set('page', $(item.target).attr('alt'));
 	}

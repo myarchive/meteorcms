@@ -8,9 +8,10 @@ Meteor.startup(function () {
 	// Initial Config
 	if (Config.find({}).count() === 0) {
 		Config.insert({
-			application : {
-				"site": "Site name",
-				"title": "Site title"
+			settings : {
+				"site": "My Site",
+				"title": "My Title",
+				"slogan": "My cool slogan!"
 			},
 			modules: {
 				"foo": {
