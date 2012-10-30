@@ -34,32 +34,36 @@ Meteor.startup(function () {
 		Pages.insert({
 			page: "home", // unique name
 			title: "Home",
-			template: "home",
+			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page. In reality this page should be rendered from MongoDB so creation and choosing of pages and paths would be dynamic</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>",
 			resource: "guest",
 			categories: null,
 			tags: null,
 			url: "/",
-			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page. In reality this page should be rendered from MongoDB so creation and choosing of pages and paths would be dynamic</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>"
+			btemplate: null,
+			ptemplate: "home"
+			
 		});
 		Pages.insert({
 			page: "about", // unique name
 			title: "About",
-			template: "default",
+			content: "<legend>About us</legend><p>This is a placeholder for the about page.</p>",
 			resource: "guest",
 			categories: null,
 			tags: null,
 			url: "/about",
-			content: "<legend>About us</legend><p>This is a placeholder for the about page.</p>"
+			btemplate: null,
+			ptemplate: null
 		});
 		Pages.insert({
 			page: "contact", // unique name
 			title: "Contact",
-			template: "default",
+			content: "<legend>Contact us</legend><p>This is a placeholder for the contact page.</p>",
 			resource: "guest",
 			categories: null,
 			tags: null,
 			url: "/contact",
-			content: "<legend>Contact us</legend><p>This is a placeholder for the contact page.</p>"
+			btemplate: null,
+			ptemplate: null
 		});
 	}
 	

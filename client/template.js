@@ -6,9 +6,23 @@
  */
 
 Template.body.template = function () {
-	// Make this dynamic with page information
-	var file = "body_default";
-	return file;
+	if (!Session.get('page')) { page = 'home'; }
+	else { page = Session.get('page'); }
+	
+	result = Pages.findOne({'page': page});
+	if (result !== undefined) { bt = result.btemplate; bt = bt ? "body_"+bt : "body_default"; }
+	else { bt = "body_default"; }
+	return Template[bt]();
+}
+
+Template.container.template = function () {
+	if (!Session.get('page')) { page = 'home'; }
+	else { page = Session.get('page'); }
+	
+	result = Pages.findOne({'page': page});
+	if (result !== undefined) { pt = result.ptemplate; pt = pt ? "page_"+pt : "page_default"; }
+	else { pt = "page_default"; }
+	return Template[pt]();
 }
 
 Template.page.content = function () {

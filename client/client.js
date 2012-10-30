@@ -13,3 +13,4 @@ Session.set('role', null);
 
 // To Do:
 console.log("### TODO: Body & Page templating needs to be dynamic");
+console.log("### TODO: Loop through all .navitems and strip .active then add to matching page name in the alt attribute");
