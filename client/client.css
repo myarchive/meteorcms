@@ -6,6 +6,7 @@ a {
 }
 a:hover {
 	text-decoration: none;
+	cursor: pointer;
 }
 footer {
 	border: 1px solid #D4D4D4;
