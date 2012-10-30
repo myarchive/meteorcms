@@ -48,7 +48,7 @@ Template.navmenu.events = {
 	}
 }
 
-Template.navmenu.events = {
+Template.navfoot.events = {
 	'click .navitem': function(item) {
 		Session.set('page', $(item.target).attr('alt'));
 	}
