@@ -21,12 +21,6 @@ Template.header.siteName = function () {
 	return text;
 }
 
-Template.body.siteTitle = function () {
-	result = Config.findOne({});
-	text = result ? result.settings.title : "Meteor CMS";
-	return text;
-}
-
 Template.container.template = function () {
 	if (!Session.get('page')) { page = 'home'; }
 	else { page = Session.get('page'); }
@@ -67,6 +61,12 @@ Template.content.html = function () {
 	return (result !== undefined) ? result.content : "";
 };
 
+Template.content.test1 = function() {
+	return "<strong>TEST ONE</strong>";
+}
+Template.content.test2 = function() {
+	return "<em>TEST TWO</em>";
+}
 Template.navalt.items = function () {
 	return NavAlt.find({}, {sort:{order:1}});
 };

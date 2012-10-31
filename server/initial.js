@@ -19,30 +19,22 @@ Meteor.startup(function () {
 				}
 			},
 			themes: {
-				"default": {
-					"active": true
-				},
-				"foo": {
-					"active": false,
-					"primaryColor": "#111",
-					"secondaryColor": "#222"
-				}
+				active: "default"
 			}
 		});
 	}
 	
-	if (Pages.find({}).count() < 3) {
+	if (Pages.find({}).count() === 0) {
 		Pages.insert({
 			page: "home", // unique name
 			title: "Home",
-			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page. In reality this page should be rendered from MongoDB so creation and choosing of pages and paths would be dynamic</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>",
+			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page.</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>",
 			resource: "guest",
 			categories: null,
 			tags: null,
 			url: "/",
 			btemplate: null,
 			ptemplate: "home"
-			
 		});
 		Pages.insert({
 			page: "about", // unique name
@@ -68,7 +60,7 @@ Meteor.startup(function () {
 		});
 	}
 	
-	if (NavAlt.find({}).count() < 1) {
+	if (NavAlt.find({}).count() === 0) {
 		NavAlt.insert({
 			id: 1, // unique id
 			order: 1,
@@ -78,7 +70,7 @@ Meteor.startup(function () {
 		});
 	}
 	
-	if (NavMenu.find({}).count() < 2) {
+	if (NavMenu.find({}).count() === 0) {
 		NavMenu.insert({
 			id: 1, // unique id
 			order: 1,
@@ -95,7 +87,7 @@ Meteor.startup(function () {
 		});
 	}
 	
-	if (NavFoot.find({}).count() < 2) {
+	if (NavFoot.find({}).count() === 0) {
 		NavFoot.insert({
 			id: 1, // unique id
 			order: 1,
