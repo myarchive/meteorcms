@@ -56,6 +56,12 @@ Template.content.html = function () {
 	// from route.js, you also have the page data from the mongoDB to utilize but must set URL correctly here
 	// routes.js handles url -> page, where as this is page setting the url (page -> url) but we must consolidate
 	// - the rules in one location, preferably route.js and simply duplicate that here to set the url on page load
+
+//	$('.dropdown-toggle').parent().addClass('dropdown');
+	$('.dropdown-toggle').append('<span class="caret"></span>');
+//	$('.dropdown-toggle + ul').addClass('dropdown-menu');
+	$('.menu-separate').after('<li class="divider"/>');
+	$('.menuDiv').removeClass('menuDiv').parent().before('<li class="divider-vertical"></li>');
 		
 	// Return the content of the page
 	return (result !== undefined) ? result.content : "";
@@ -91,13 +97,15 @@ function printMenu(menu) {
 		if (isPage) {
 			classes = (item.page == Session.get("page")) ? "navitem active" : "navitem";
 			classes = (isDropdown) ? classes+" dropdown-toggle" : classes;
+			caret = (isDropdown) ? "<b class='caret'></b>" : "";
 			drop = (isDropdown) ? " data-toggle='dropdown'" : "";
-			link = "<a class='"+classes+"'"+drop+" alt='"+item.page+"'>"+item.label+"</a>"
+			link = "<a class='"+classes+"'"+drop+" alt='"+item.page+"'>"+item.label+caret+"</a>"
 		} else {
 			classes = (isDropdown) ? " class='dropdown-toggle'" : "";
+			caret = (isDropdown) ? "<b class='caret'></b>" : "";
 			drop = (isDropdown) ? " data-toggle='dropdown'" : "";
 			href = (item.url) ? " href='"+item.url+"'" : "";
-			link = "<a"+classes+drop+href+">"+item.label+"</a>"
+			link = "<a"+classes+drop+href+">"+item.label+caret+"</a>"
 		}
 	
 		if (isDropdown) {

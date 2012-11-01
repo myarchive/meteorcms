@@ -9,10 +9,10 @@ a:hover {
 	cursor: pointer;
 }
 a.active {
-	font-weight: bold;
+	color: #ccc !important;
 }
 footer {
-	border: 1px solid #D4D4D4;
+	border-top: 2px solid #D4D4D4;
 	background: #F2F2F2;
 	text-align: center;
 	font-size: .85em;
