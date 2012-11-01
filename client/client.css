@@ -8,6 +8,9 @@ a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
+a.active {
+	font-weight: bold;
+}
 footer {
 	border: 1px solid #D4D4D4;
 	background: #F2F2F2;

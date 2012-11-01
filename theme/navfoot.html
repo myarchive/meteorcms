@@ -1,7 +1,11 @@
 <template name="navfoot">
 		{{#each items}}
 			{{#if page}}
-			<span style="margin-left:15px"><a class="navitem" alt="{{page}}">{{label}}</a></span>
+				{{#if isPage}}
+				<span style="margin-left:15px"><a class="navitem active" alt="{{page}}">{{label}}</a></span>
+				{{else}}
+				<span style="margin-left:15px"><a class="navitem" alt="{{page}}">{{label}}</a></span>
+				{{/if}}
 			{{else}}
 			<span style="margin-left:15px"><a href="{{url}}">{{label}}</a></span>
 			{{/if}}

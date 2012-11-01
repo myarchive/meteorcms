@@ -56,7 +56,7 @@ Template.content.html = function () {
 	// from route.js, you also have the page data from the mongoDB to utilize but must set URL correctly here
 	// routes.js handles url -> page, where as this is page setting the url (page -> url) but we must consolidate
 	// - the rules in one location, preferably route.js and simply duplicate that here to set the url on page load
-	
+		
 	// Return the content of the page
 	return (result !== undefined) ? result.content : "";
 };
@@ -71,13 +71,25 @@ Template.navalt.items = function () {
 	return NavAlt.find({}, {sort:{order:1}});
 };
 
+Template.navalt.isPage = function () {
+	return (this.page == Session.get("page")) ? true : false;
+}
+
 Template.navmenu.items = function () {
 	return NavMenu.find({}, {sort:{order:1}});
 };
 
+Template.navmenu.isPage = function () {
+	return (this.page == Session.get("page")) ? true : false;
+}
+
 Template.navfoot.items = function () {
 	return NavFoot.find({}, {sort:{order:1}});
 };
+
+Template.navfoot.isPage = function () {
+	return (this.page == Session.get("page")) ? true : false;
+}
 
 // Click Events
 Template.header.events = {

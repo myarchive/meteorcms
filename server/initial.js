@@ -74,13 +74,6 @@ Meteor.startup(function () {
 		NavMenu.insert({
 			id: 1, // unique id
 			order: 1,
-			label: "Home",
-			page: "home",
-			url: null
-		});
-		NavMenu.insert({
-			id: 2, // unique id
-			order: 2,
 			label: "About",
 			page: "about",
 			url: null

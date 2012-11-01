@@ -1,7 +1,11 @@
 <template name="navmenu">
 		{{#each items}}
 			{{#if page}}
-			<li><a class="navitem" alt="{{page}}">{{label}}</a></li>
+				{{#if isPage}}
+				<li><a class="navitem active" alt="{{page}}">{{label}}</a></li>
+				{{else}}
+				<li><a class="navitem" alt="{{page}}">{{label}}</a></li>
+				{{/if}}
 			{{else}}
 			<li><a href="{{url}}">{{label}}</a></li>
 			{{/if}}
