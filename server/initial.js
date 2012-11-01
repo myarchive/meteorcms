@@ -62,7 +62,6 @@ Meteor.startup(function () {
 	
 	if (NavAlt.find({}).count() === 0) {
 		NavAlt.insert({
-			id: 1, // unique id
 			order: 1,
 			label: "Meteor CMS",
 			page: null,
@@ -72,24 +71,39 @@ Meteor.startup(function () {
 	
 	if (NavMenu.find({}).count() === 0) {
 		NavMenu.insert({
-			id: 1, // unique id
 			order: 1,
 			label: "About",
 			page: "about",
 			url: null
+		});
+		NavMenu.insert({
+			order: 2,
+			label: "Menu",
+			page: null,
+			url: null,
+			dropdown: [
+				{
+					label: "Foo",
+					page: "foo",
+					url: null
+				},
+				{
+					label: "Bar",
+					page: "bar",
+					url: null
+				}				
+			]
 		});
 	}
 	
 	if (NavFoot.find({}).count() === 0) {
 		NavFoot.insert({
-			id: 1, // unique id
 			order: 1,
 			label: "About",
 			page: "about",
 			url: null
 		});
 		NavFoot.insert({
-			id: 2, // unique id
 			order: 2,
 			label: "Contact",
 			page: "contact",

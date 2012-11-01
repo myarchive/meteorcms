@@ -75,12 +75,38 @@ Template.navalt.isPage = function () {
 	return (this.page == Session.get("page")) ? true : false;
 }
 
-Template.navmenu.items = function () {
-	return NavMenu.find({}, {sort:{order:1}});
+Template.navmenu.menu = function () {
+	menu = NavMenu.find({}, {sort:{order:1}}).fetch();
+	return printMenu(menu);
 };
 
-Template.navmenu.isPage = function () {
-	return (this.page == Session.get("page")) ? true : false;
+function printMenu(menu) {
+	if (menu.length == 0) return;
+	var output = "";
+	for (i=0; i < menu.length; i++) {
+		item = menu[i];
+		isPage = (item.page) ? true : false;
+		isDropdown = (item.dropdown !== undefined) ? true : false;
+		
+		if (isPage) {
+			classes = (item.page == Session.get("page")) ? "navitem active" : "navitem";
+			classes = (isDropdown) ? classes+" dropdown-toggle" : classes;
+			drop = (isDropdown) ? " data-toggle='dropdown'" : "";
+			link = "<a class='"+classes+"'"+drop+" alt='"+item.page+"'>"+item.label+"</a>"
+		} else {
+			classes = (isDropdown) ? " class='dropdown-toggle'" : "";
+			drop = (isDropdown) ? " data-toggle='dropdown'" : "";
+			href = (item.url) ? " href='"+item.url+"'" : "";
+			link = "<a"+classes+drop+href+">"+item.label+"</a>"
+		}
+	
+		if (isDropdown) {
+			output = output+"<li class='dropdown'>"+link+"<ul class='dropdown-menu'>"+printMenu(item.dropdown)+"</ul></li>"
+		} else {
+			output = output+"<li>"+link+"</li>";
+		}
+	}
+	return output;
 }
 
 Template.navfoot.items = function () {
