@@ -81,6 +81,7 @@ Meteor.startup(function () {
 			label: "Menu",
 			page: null,
 			url: null,
+			divider: 1,
 			dropdown: [
 				{
 					label: "Foo",
@@ -90,7 +91,8 @@ Meteor.startup(function () {
 				{
 					label: "Bar",
 					page: "bar",
-					url: null
+					url: null,
+					divider: 1
 				}				
 			]
 		});

@@ -83,16 +83,17 @@ Template.navalt.isPage = function () {
 
 Template.navmenu.menu = function () {
 	menu = NavMenu.find({}, {sort:{order:1}}).fetch();
-	return printMenu(menu);
+	return printMenu(menu,1);
 };
 
-function printMenu(menu) {
+function printMenu(menu,top) {
 	if (menu.length == 0) return;
 	var output = "";
 	for (i=0; i < menu.length; i++) {
 		item = menu[i];
 		isPage = (item.page) ? true : false;
 		isDropdown = (item.dropdown !== undefined) ? true : false;
+		hasDivider = (item.divider !== undefined) ? true : false;
 		
 		if (isPage) {
 			classes = (item.page == Session.get("page")) ? "navitem active" : "navitem";
@@ -107,11 +108,17 @@ function printMenu(menu) {
 			href = (item.url) ? " href='"+item.url+"'" : "";
 			link = "<a"+classes+drop+href+">"+item.label+caret+"</a>"
 		}
-	
-		if (isDropdown) {
-			output = output+"<li class='dropdown'>"+link+"<ul class='dropdown-menu'>"+printMenu(item.dropdown)+"</ul></li>"
+	console.log(item);
+		if (hasDivider) {
+			divi = (top == 1) ? "<li class='divider-vertical'/>" : "<li class='divider'/>";
 		} else {
-			output = output+"<li>"+link+"</li>";
+			divi = "";
+		}
+		
+		if (isDropdown) {
+			output = output+divi+"<li class='dropdown'>"+link+"<ul class='dropdown-menu'>"+printMenu(item.dropdown,0)+"</ul></li>";
+		} else {
+			output = output+divi+"<li>"+link+"</li>";
 		}
 	}
 	return output;
