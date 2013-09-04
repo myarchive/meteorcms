@@ -26,6 +26,17 @@ Meteor.startup(function () {
 	
 	if (Pages.find({}).count() === 0) {
 		Pages.insert({
+			page: "admin", // unique name
+			title: "Admin",
+			content: "<legend>Admin Dashboard</legend>",
+			resource: "admin",
+			categories: null,
+			tags: null,
+			url: "/admin",
+			btemplate: "admin",
+			ptemplate: "admin"
+		});
+		Pages.insert({
 			page: "home", // unique name
 			title: "Home",
 			content: "<legend>Welcome to Meteor CMS</legend><p>This is the home page.</p><blockquote><p>The WYSIWYG editor should be completely compatible with Twitter Bootstrap such as in quotes</p><small><cite>Aric Camarata</cite></small></blockquote>",

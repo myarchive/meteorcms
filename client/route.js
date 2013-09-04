@@ -5,21 +5,7 @@
  * Pages have a setting in mongo to have a url assigned to them, we need to loop and build that here also
  */
 
-var Router = Backbone.Router.extend({
-	routes: {	
-		"" : "page", // Home function
-		":page" : "page" // Other pages function
-	},
-	page: function(page) {
-		if (!page) { page = 'home'; }
-		Session.set('page', page);
-		// if (!page) { TL.info("Request route: index", "Backbone Routing"); }
-		// else { TL.info("Request route: " + page, "Backbone Routing"); }
-	}
-});
-
-// Initialize Backbone routing
-var app = new Router;
-Meteor.startup(function () {
-	Backbone.history.start({pushState: true})
+Meteor.Router.add({
+  '/news': 'news',
+  '*': 'not_found'
 });
