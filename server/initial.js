@@ -1,5 +1,5 @@
 Meteor.startup(function() {
-
+	
 	// Initial Config
 	if (Config.find({}).count() === 0) {
 		Config.insert({
