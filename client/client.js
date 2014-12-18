@@ -10,6 +10,8 @@ function loadModal(a){var b=$(".in").val();$("#modal").load(a);if(b==undefined){
 Session.set('info', null);
 Session.set('page', null);
 Session.set('role', null);
+Session.set('apage', null);
+Session.set('asect', null);
 
 // To Do:
-console.log("### TODO: Loop through all .navitems and strip .active then add to matching page name in the alt attribute");
+// console.log("### TODO: Loop through all .navitems and strip .active then add to matching page name in the alt attribute");

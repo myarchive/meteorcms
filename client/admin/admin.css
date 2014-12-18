@@ -1,0 +1,49 @@
+#awrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -30px;
+	padding: 0 0 30px;
+}
+
+#awrap .navbar {
+	margin: 0px !important;
+}
+
+#awrap #sidebar {
+	padding-right: 0px;
+	background: #f5f5f5;
+}
+
+#awrap #sidebar .panel { margin: 0; }
+
+#awrap #sidebar .panel-heading { margin: 0; padding: 0; }
+
+#awrap #sidebar .panel-heading a { color: #47a; font-size: 1.2em; text-decoration: none; }
+#awrap #sidebar .panel-heading a.collapsed { color: #000; }
+
+#awrap #sidebar .panel-heading a h4 {  margin: 0; padding: 15px; }
+#awrap #sidebar .panel-heading a.collapsed h4 { background: #f5f5f5; }
+#awrap #sidebar .panel-heading a.collapsed h4:hover { color: #69c; }
+
+#awrap #sidebar .panel-heading a h4 i { width: 20px; }
+
+#awrap #sidebar .panel-body { padding: 0; }
+
+#awrap #sidebar .panel-body a { text-decoration: none; color: #000; }
+#awrap #sidebar .panel-body a:hover { color: #69c; }
+#awrap #sidebar .panel-body a.active { color: #337ab7; }
+
+#awrap #sidebar .panel-body a h5 { padding: 10px 0 10px 35px; margin: 0;}
+#awrap #sidebar .panel-body a.active h5 { background-color: #eef; }
+
+#awrap #sidebar .panel-body a h5 i { width: 20px; }
+
+#afooter {
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #222;
+	color: #ddd;
+	font-size: 12px;
+}

@@ -1,0 +1,23 @@
+html,
+body {
+	height: 100%;
+}
+#wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -30px;
+	padding: 60px 0 30px;
+}
+
+footer {
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #f0f0f0;
+	font-size: 12px;
+}
+
+.nav a {
+	cursor: pointer;
+}

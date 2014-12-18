@@ -1,7 +1,7 @@
-meteorcms v 0.1
+meteorcms v 0.2
 =========
 
-A CMS system built and based on the Meteor project (www.meteor.com).
+A CMS system built and based on the Meteor project (www.meteor.com).  I have redesigned recently and restarted working on this now that Meteor is at v1. Contact direct or create issues to contact.
 
 demo
 ====
@@ -45,3 +45,5 @@ Install requirements:
 `npm install request`
 
 Into tests/ run: mocha --reporter spec
+
+* This was removed when upgraded to Meteor 1.0.1
