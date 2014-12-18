@@ -1,12 +1,4 @@
 Meteor.startup(function() {
-	
-	//	service: "facebook",
-	//	appId: "329335093880226",
-	//	secret: "e025ef6c9200aa925c929d913a52958c"
-
-	//	service: "google",
-	//	clientId: "404654317900-4jqj1u040ks6j9ik7610of653k09pcv9.apps.googleusercontent.com",
-	//	secret: "wIOKkJVWafAojihAeKOTH8-S"
 
 	// Initial Config
 	if (Config.find({}).count() === 0) {
