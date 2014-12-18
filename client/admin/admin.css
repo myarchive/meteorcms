@@ -9,34 +9,34 @@
 	margin: 0px !important;
 }
 
-#awrap #sidebar {
+#awrap #anav {
 	padding-right: 0px;
 	background: #f5f5f5;
 }
 
-#awrap #sidebar .panel { margin: 0; }
+#awrap #anav .panel { margin: 0; }
 
-#awrap #sidebar .panel-heading { margin: 0; padding: 0; }
+#awrap #anav .panel-heading { margin: 0; padding: 0; }
 
-#awrap #sidebar .panel-heading a { color: #47a; font-size: 1.2em; text-decoration: none; }
-#awrap #sidebar .panel-heading a.collapsed { color: #000; }
+#awrap #anav .panel-heading a { color: #47a; font-size: 1.2em; text-decoration: none; }
+#awrap #anav .panel-heading a.collapsed { color: #000; }
 
-#awrap #sidebar .panel-heading a h4 {  margin: 0; padding: 15px; }
-#awrap #sidebar .panel-heading a.collapsed h4 { background: #f5f5f5; }
-#awrap #sidebar .panel-heading a.collapsed h4:hover { color: #69c; }
+#awrap #anav .panel-heading a h4 {  margin: 0; padding: 15px; }
+#awrap #anav .panel-heading a.collapsed h4 { background: #f5f5f5; }
+#awrap #anav .panel-heading a.collapsed h4:hover { color: #69c; }
 
-#awrap #sidebar .panel-heading a h4 i { width: 20px; }
+#awrap #anav .panel-heading a h4 i { width: 20px; }
 
-#awrap #sidebar .panel-body { padding: 0; }
+#awrap #anav .panel-body { padding: 0; }
 
-#awrap #sidebar .panel-body a { text-decoration: none; color: #000; }
-#awrap #sidebar .panel-body a:hover { color: #69c; }
-#awrap #sidebar .panel-body a.active { color: #337ab7; }
+#awrap #anav .panel-body a { text-decoration: none; color: #000; }
+#awrap #anav .panel-body a:hover { color: #69c; }
+#awrap #anav .panel-body a.active { color: #337ab7; }
 
-#awrap #sidebar .panel-body a h5 { padding: 10px 0 10px 35px; margin: 0;}
-#awrap #sidebar .panel-body a.active h5 { background-color: #eef; }
+#awrap #anav .panel-body a h5 { padding: 10px 0 10px 35px; margin: 0;}
+#awrap #anav .panel-body a.active h5 { background-color: #eef; }
 
-#awrap #sidebar .panel-body a h5 i { width: 20px; }
+#awrap #anav .panel-body a h5 i { width: 20px; }
 
 #afooter {
 	height: 30px;

@@ -135,20 +135,16 @@ Meteor.startup(function() {
 			label: "Dashboard",
 			pages: [
 				{
-					order: 1,
 					name: null,
-					url: "/admin",
 					icon: "th",
 					label: "Overview"
 				},
 				{
-					order: 2,
 					name: "stats",
 					icon: "bar-chart",
 					label: "Statistics"
 				},
 				{
-					order: 3,
 					name: "config",
 					icon: "cogs",
 					label: "Configuration"
@@ -164,7 +160,7 @@ Meteor.startup(function() {
 				{
 					order: 1,
 					name: null,
-					icon: "th",
+					icon: "list",
 					label: "List"
 				},
 				{
@@ -184,7 +180,7 @@ Meteor.startup(function() {
 				{
 					order: 1,
 					name: null,
-					icon: "th",
+					icon: "list",
 					label: "List"
 				},
 				{
@@ -204,7 +200,7 @@ Meteor.startup(function() {
 				{
 					order: 1,
 					name: null,
-					icon: "th",
+					icon: "list",
 					label: "List"
 				},
 				{
@@ -218,13 +214,13 @@ Meteor.startup(function() {
 		AdminMenu.insert({
 			order: 4,
 			name: "themes",
-			icon: "picture",
+			icon: "file-image-o",
 			label: "Themes",
 			pages: [
 				{
 					order: 1,
 					name: null,
-					icon: "th",
+					icon: "list",
 					label: "List"
 				},
 				{
@@ -244,8 +240,8 @@ Meteor.startup(function() {
 				{
 					order: 1,
 					name: null,
-					icon: "th",
-					label: "Overview"
+					icon: "list",
+					label: "List"
 				},
 				{
 					order: 2,
@@ -264,7 +260,7 @@ Meteor.startup(function() {
 				{
 					order: 1,
 					name: null,
-					icon: "th",
+					icon: "list",
 					label: "List"
 				},
 				{
