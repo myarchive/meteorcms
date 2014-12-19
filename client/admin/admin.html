@@ -24,15 +24,16 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-		<div class="row">
-			{{{adminmenu}}}
-
-			<div class="col-xs-6 col-sm-9" id="acontent">
-				{{> yield}}
-			</div><!--/.acontent-->
-		</div><!--/row-->
-	</div>
-
+		<div class="container-fluid">
+			<div class="row">
+				{{{adminmenu}}}
+				<div class="col-xs-6 col-sm-9" id="acontent">
+					{{> yield}}
+				</div><!--/.acontent-->
+			</div><!--/row-->
+		</div><!--/container-->
+	</div> <!--/awrap-->
+	
     <footer id="afooter">
 		&copy;2014 Meteor CMS by <a href="http://www.ussunnah.org" target="_blank">us-Sunnah Foundation</a>
 	</footer>

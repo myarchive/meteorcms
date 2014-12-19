@@ -55,3 +55,59 @@ function printAdminMenu(menu, top) {
 	output = output + '</div></div>';
 	return output;
 }
+
+Router.route('adminUser', {
+	path: '/admin/user/:user',
+	layoutTemplate: 'layout_admin',
+	onBeforeAction: function() {
+		document.title = "Site Name | Admin > User: " + this.params.user;
+		this.next();
+	},
+	action: function() {
+		Session.set('asect', 'users');
+		Session.set('apage', 'user');
+		this.render('admin_user');
+	}
+});
+
+Router.route('adminPage', {
+	path: '/admin/:asect/:apage',
+	layoutTemplate: 'layout_admin',
+	onBeforeAction: function() {
+		document.title = "Site Name | Admin > " + this.params.asect + " > " + this.params.apage;
+		this.next();
+	},
+	action: function() {
+		Session.set('asect', this.params.asect);
+		Session.set('apage', this.params.apage);
+		this.render('admin_' + this.params.asect + '_' + this.params.apage);
+	}
+});
+
+Router.route('adminSect', {
+	path: '/admin/:asect',
+	layoutTemplate: 'layout_admin',
+	onBeforeAction: function() {
+		document.title = "Site Name | Admin > " + this.params.asect;
+		this.next();
+	},
+	action: function() {
+		Session.set('asect', this.params.asect);
+		Session.set('apage', null);
+		this.render('admin_' + this.params.asect);
+	}
+});
+
+Router.route('admin', {
+	path: '/admin',
+	layoutTemplate: 'layout_admin',
+	onBeforeAction: function() {
+		document.title = "Site Name | Admin > Dahsboard";
+		this.next();
+	},
+	action: function() {
+		Session.set('asect', 'dashboard');
+		Session.set('apage', null);
+		this.render('admin_dashboard');
+	}
+});

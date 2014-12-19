@@ -36,57 +36,6 @@ Router.route('/profile', {
 	}
 });
 
-Router.route('adminPage', {
-	path: '/admin/:asect/:apage',
-	layoutTemplate: 'layout_admin',
-	onBeforeAction: function() {
-		document.title = "Site Name | Admin > " + this.params.asect + " > " + this.params.apage;
-		this.next();
-	},
-	action: function() {
-		Session.set('asect', this.params.asect);
-		Session.set('apage', this.params.apage);
-		this.render('admin_' + this.params.asect + '_' + this.params.apage);
-	}
-});
-
-Router.route('adminSect', {
-	path: '/admin/:asect',
-	layoutTemplate: 'layout_admin',
-	onBeforeAction: function() {
-		document.title = "Site Name | Admin > " + this.params.asect;
-		this.next();
-	},
-	action: function() {
-		Session.set('asect', this.params.asect);
-		Session.set('apage', null);
-		this.render('admin_' + this.params.asect);
-	}
-});
-
-Router.route('admin', {
-	path: '/admin',
-	layoutTemplate: 'layout_admin',
-	onBeforeAction: function() {
-		document.title = "Site Name | Admin > Dahsboard";
-		this.next();
-	},
-	action: function() {
-		Session.set('asect', 'dashboard');
-		Session.set('apage', null);
-		this.render('admin_dashboard');
-	}
-});
-
-
-
-
-
-
-
-
-
-
 Router.route('/:page', {
 	name: 'content',
 	path: '/:page',
