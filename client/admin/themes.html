@@ -1,6 +1,17 @@
 <template name="admin_themes">
 	<legend>Themes - List</legend>
-	<p>...</p>
+	<div id="themes">
+		{{#each themes}}
+		<div class="col-sm-6 col-md-3">
+			<a href="#" class="thumbnail">
+				<img src="{{img}}" 
+					 alt="{{name}}">
+			</a>
+		</div>
+		{{/each}}
+		{{activeTheme}}
+	</div>
+
 </template>
 
 <template name="admin_themes_new">

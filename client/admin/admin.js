@@ -111,3 +111,28 @@ Router.route('admin', {
 		this.render('admin_dashboard');
 	}
 });
+
+
+/*
+Router.route('admin',{
+    path: '/admin/:asect?/:apage?',
+    template: 'admin',
+    layoutTemplate: 'layout_admin',
+    action: function() {
+
+        var asect  = this.params.asect || 'dashboard',
+            apage  = this.params.apage || null,
+            render = (function(){
+                if(apage !== null) {
+                    return 'admin_'+ asect +'_'+ apage;
+                } else {
+                    return 'admin_'+ asect;
+                }
+            })();
+
+        Session.set('asect', asect);
+        Session.set('apage', apage);
+        this.render(render);
+    }
+});
+ */

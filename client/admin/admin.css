@@ -48,3 +48,5 @@
 	color: #ddd;
 	font-size: 12px;
 }
+
+#themes a.active { background: red !important }

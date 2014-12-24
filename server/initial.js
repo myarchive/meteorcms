@@ -1,20 +1,18 @@
 Meteor.startup(function() {
-	
+
 	// Initial Config
 	if (Config.find({}).count() === 0) {
 		Config.insert({
 			settings: {
 				"site": "My Site",
 				"title": "My Title",
-				"slogan": "My cool slogan!"
+				"slogan": "My cool slogan!",
+				"theme": "Cerulean"
 			},
 			modules: {
 				"foo": {
 					"option": 0
 				}
-			},
-			themes: {
-				active: "default"
 			}
 		});
 	}

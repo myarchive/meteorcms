@@ -1,7 +1,3 @@
-TabularTables = {};
-
-Meteor.isClient && Template.registerHelper('TabularTables', TabularTables);
-
 TabularTables.Users = new Tabular.Table({
   name: "Users",
   collection: Meteor.users,
