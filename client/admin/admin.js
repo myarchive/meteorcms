@@ -1,4 +1,5 @@
 Template.layout_admin.rendered = function() {
+	$("#headtheme").remove();
 	window.onresize = function() {
 		var cheight = $(window).height() - 51 - 30; // Nav & Footer
 		$("#anav").css("min-height", cheight);
@@ -11,7 +12,7 @@ UI.registerHelper('adminmenu', function() {
 		var cheight = $(window).height() - 51 - 30; // Nav & Footer
 		$("#anav").css("min-height", cheight);
 	}, 1);
-	
+
 	menu = AdminMenu.find({}, {sort: {order: 1}}).fetch();
 	return printAdminMenu(menu, 1);
 });
@@ -114,25 +115,25 @@ Router.route('admin', {
 
 
 /*
-Router.route('admin',{
-    path: '/admin/:asect?/:apage?',
-    template: 'admin',
-    layoutTemplate: 'layout_admin',
-    action: function() {
-
-        var asect  = this.params.asect || 'dashboard',
-            apage  = this.params.apage || null,
-            render = (function(){
-                if(apage !== null) {
-                    return 'admin_'+ asect +'_'+ apage;
-                } else {
-                    return 'admin_'+ asect;
-                }
-            })();
-
-        Session.set('asect', asect);
-        Session.set('apage', apage);
-        this.render(render);
-    }
-});
+ Router.route('admin',{
+ path: '/admin/:asect?/:apage?',
+ template: 'admin',
+ layoutTemplate: 'layout_admin',
+ action: function() {
+ 
+ var asect  = this.params.asect || 'dashboard',
+ apage  = this.params.apage || null,
+ render = (function(){
+ if(apage !== null) {
+ return 'admin_'+ asect +'_'+ apage;
+ } else {
+ return 'admin_'+ asect;
+ }
+ })();
+ 
+ Session.set('asect', asect);
+ Session.set('apage', apage);
+ this.render(render);
+ }
+ });
  */
