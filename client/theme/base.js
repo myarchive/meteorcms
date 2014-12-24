@@ -78,8 +78,11 @@ Template.layout.helpers({
 		if (theme !== "Default") {
 			var info = Themes.findOne({"name": theme});
 			if (info) {
-				$("head").append("<link rel='stylesheet' type='text/css' href='"+info.css+"'>");
+				$("#headtheme").remove();
+				$("head").append("<link rel='stylesheet' id='headtheme' type='text/css' href='" + info.css + "'>");
 			}
+		} else {
+			$("#headtheme").remove();
 		}
 	}
 });
