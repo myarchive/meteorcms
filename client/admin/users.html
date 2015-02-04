@@ -5,10 +5,20 @@
 
 <template name="admin_users_new">
 	<legend>Users - New</legend>
-	<p>...</p>
+	<ul>
+		<li>Restrict admins from adding admins? (super admin or owner role only?)</li>
+		<li>Normally we have people signin with Facebook or Google then edit first.. so they must be able to merge if they login this way... (by email)</li>
+	</ul>
 </template>
 
 <template name="admin_user">
-	<legend>User: -usernamehere-</legend>
-	<p>...</p>
+	{{#if name}}
+	<legend>User: {{name}}<span style="float:right;font-size:.6em;margin:5px"><a href="/admin/users">[All Users]</a></span></legend>
+	<ul>
+		<li>Edit roles.. protect first admin / maybe need "owner" role?</li>
+		<li>Delete user here or on the table? Both?</li>
+	</ul>
+	{{else}}
+	<h1>No user found...</h1>
+	{{/if}}
 </template>

@@ -46,26 +46,44 @@
 	</div>
 </template>
 
-<template name="home">
+<template name="pages">
 	<div class="container">
 		{{{content}}}		
 	</div>
 </template>
 
-<template name="content">
+<template name="posts">
 	<div class="container">
 		{{{content}}}		
+	</div>
+</template>
+
+<template name="posts-home">
+	<div class="container">
+		<h1>Posts Home</h1>	
 	</div>
 </template>
 
 <template name="profile">
 	<div class="container">
+		{{#if currentUser}}
 		<legend>Profile</legend>
 		<p>...</p>
+		{{else}}
+		<p>You must Sign-in first</p>
+		{{/if}}
+	</div>
+</template>
+
+<template name="denied">
+	<div class="container">
+		<p>Access Denied</p>
 	</div>
 </template>
 
 <template name="_loginButtonsAdditionalLoggedInDropdownActions">
     <button class="btn btn-default btn-block" id="login-buttons-edit-profile">Edit Profile</button>
+	{{#if isInRole 'admin'}}
     <button class="btn btn-default btn-block" id="login-buttons-admin-console">Admin Console</button>
+	{{/if}}
 </template>

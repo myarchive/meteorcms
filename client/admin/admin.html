@@ -23,7 +23,8 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-
+		
+		{{#if isInRole 'admin'}}
 		<div class="container-fluid">
 			<div class="row">
 				{{{adminmenu}}}
@@ -32,6 +33,11 @@
 				</div><!--/.acontent-->
 			</div><!--/row-->
 		</div><!--/container-->
+		{{else}}
+		<div class="container">
+			Access Denied
+		</div>
+		{{/if}}
 	</div> <!--/awrap-->
 	
     <footer id="afooter">

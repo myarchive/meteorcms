@@ -1,3 +1,10 @@
+UI.registerHelper('content', function() {
+	var info = Session.get('info');
+	return info.content;
+});
+
+
+
 UI.registerHelper('siteName', function() {
 	result = Config.findOne({});
 	text = result ? result.settings.site : "";
@@ -7,18 +14,6 @@ UI.registerHelper('siteName', function() {
 UI.registerHelper('navmenu', function() {
 	menu = NavMenu.find({}, {sort: {order: 1}}).fetch();
 	return printMenu(menu, 1);
-});
-
-UI.registerHelper('content', function() {
-	if (!Session.get('page')) {
-		page = 'home';
-	}
-	else {
-		page = Session.get('page');
-	}
-
-	result = Pages.findOne({'page': page});
-	return (result !== undefined) ? result.content : "";
 });
 
 function printMenu(menu, top) {
