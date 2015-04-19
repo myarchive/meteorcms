@@ -13,11 +13,20 @@
 
 <template name="admin_user">
 	{{#if name}}
-	<legend>User: {{name}}<span style="float:right;font-size:.6em;margin:5px"><a href="/admin/users">[All Users]</a></span></legend>
+	<legend>User: {{name}}<span style="float:right;font-size:.6em;margin:5px"><a href="/admin/users">[Back to Users]</a></span></legend>
 	<ul>
 		<li>Edit roles.. protect first admin / maybe need "owner" role?</li>
 		<li>Delete user here or on the table? Both?</li>
 	</ul>
+	<form>
+		<label>Role:</label><select><option>Admin</option></select><br>
+		<label>Display name:</label><input type="text"/><br>
+		<label>Personal site:</label><input type="text"/><br>
+		<label>Bio Line:</label> <textarea rows="3"></textarea><br>
+		<br>
+		<input id="cancel" type="submit" value="Cancel"/> &nbsp; 
+		<input id="save" type="submit" value="Save"/>
+	</form>
 	{{else}}
 	<h1>No user found...</h1>
 	{{/if}}

@@ -25,8 +25,8 @@ function printAdminMenu(menu, top) {
 	var apage = Session.get('apage');
 	var asect = Session.get('asect');
 
-	var output = '<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="anav" role="navigation">';
-	var output = output + '<div class="panel-group" id="amenu">';
+//	var output = '<div class="col-xs-4 col-sm-2 sidebar-offcanvas" id="anav" role="navigation">';
+	var output = '<div class="panel-group" id="amenu">';
 	for (i = 0; i < menu.length; i++) {
 		item = menu[i];
 
@@ -53,6 +53,6 @@ function printAdminMenu(menu, top) {
 		var output = output + '</div>';
 	}
 
-	output = output + '</div></div>';
+	output = output + '</div>';
 	return output;
 }

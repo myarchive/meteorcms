@@ -5,5 +5,38 @@
 
 <template name="admin_pages_new">
 	<legend>Pages - New</legend>
-	<p>...</p>
+	<ul>
+		<li>just basics, then create and go to edit page...</li>
+	</ul>
+</template>
+
+<template name="admin_page">
+	{{#if name}}
+	<legend>Page: {{name}}<span style="float:right;font-size:.6em;margin:5px"><a href="/admin/pages">[Back to Pages]</a></span></legend>
+	<form>
+		<input type="hidden" value="{{id}}"/>
+		<div class="row">
+			<label class="col-sm-1">Page</label>
+			<div class="col-sm-10">{{hostname}}/<input type="text" value="{{name}}"/></div>
+		</div>
+		<br>
+		<div class="row">
+			<label class="col-sm-1">Title:</label>
+			<input class="col-sm-10" value="{{title}}"/>
+		</div>
+		<br>
+		<div class="row">
+			<label class="col-sm-1">Content:</label>
+			<textarea class="col-sm-10" rows="20">{{content}}</textarea>
+		</div>
+		<br><br>
+		<div class="row">
+			<label class="col-sm-1">&nbsp;</label>
+			<input id="cancel" type="submit" value="Cancel"/> &nbsp; 
+			<input id="save" type="submit" value="Save"/>
+		</div>
+	</form>
+	{{else}}
+	<h1>No page found...</h1>
+	{{/if}}
 </template>
